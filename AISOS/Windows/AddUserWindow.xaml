@@ -1,0 +1,71 @@
+﻿<Window x:Class="AISOS.Windows.AddUserWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AISOS.Windows" xmlns:viewmodels="clr-namespace:AISOS.ViewModels" d:DataContext="{d:DesignInstance Type=viewmodels:AddUserViewModel}"
+        xmlns:converters="clr-namespace:AISOS.Converters"
+        mc:Ignorable="d"
+        Title="Сотрудник" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" ShowInTaskbar="False" WindowStyle="None" Background="Transparent" AllowsTransparency="True">
+    <Border Background="{DynamicResource BackGradient}" BorderBrush="White" BorderThickness="2" CornerRadius="10" >
+        <Grid Margin="5">
+            <Grid Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Row="0" Content="Администратор" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="1" Content="Логин" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="2" Content="Пароль" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="3" Content="Имя" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="4" Content="Фамилия" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="5" Content="Отчество" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="6" Content="День рождения" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="7" Content="Телефон" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="8" Content="Звание" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="9" Content="Личный номер" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="10" Content="Должность" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+                    <Label Grid.Row="11" Content="Кабинет" VerticalAlignment="Center" Margin="0" Padding="5" FontSize="14"/>
+
+                    <CheckBox Grid.Row="0" Grid.Column="1" IsChecked="{Binding NewUser.IsAdmin}" VerticalContentAlignment="Center" Margin="5" Padding="5" FontSize="14"/>
+                    <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding NewUser.Login, Converter={StaticResource LoginConverter}}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <Button Grid.Row="2" Grid.Column="1" Margin="5,0" Height="30" Width="100" HorizontalAlignment="Left" VerticalAlignment="Center" Content="Изменить" FontSize="14" Command="{Binding ChangePasswordCommand, Mode=OneWay}"/>
+                    <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding NewUser.FirstName}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <TextBox Grid.Row="4" Grid.Column="1" Text="{Binding NewUser.SecondName}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <TextBox Grid.Row="5" Grid.Column="1" Text="{Binding NewUser.ThirdName}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <DatePicker Grid.Row="6" Grid.Column="1" Text="{Binding NewUser.Birthday, Converter={StaticResource DateConverter}}" VerticalContentAlignment="Stretch" Margin="0" Padding="5" DisplayDate="{Binding NewUser.Birthday}" SelectedDate="{Binding NewUser.Birthday}" FontSize="14" FontFamily="Microsoft Sans Serif" BorderBrush="{x:Null}" />
+                    <TextBox Grid.Row="7" Grid.Column="1" Text="{Binding NewUser.Phone, Converter={StaticResource PhoneConverter}}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <TextBox Grid.Row="8" Grid.Column="1" Text="{Binding NewUser.Rank}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <TextBox Grid.Row="9" Grid.Column="1" Text="{Binding NewUser.PeronalNumber}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                    <TextBox Grid.Row="10" Grid.Column="1" Text="{Binding NewUser.Job}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="64" FontSize="14"/>
+                    <TextBox Grid.Row="11" Grid.Column="1" Text="{Binding NewUser.Workroom}" VerticalContentAlignment="Center" Margin="5" Padding="5" MaxLines="1" MaxLength="32" FontSize="14"/>
+                </Grid>
+                <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0">
+                    <Button Width="100" Height="30" Content="Назад" IsCancel="True" Command="{Binding CancelCommand}" Margin="5" FontSize="14"/>
+                    <Button Width="100" Height="30" Content="Обновить" Command="{Binding UpdateCommand}" Margin="5" FontSize="14"/>
+                    <Button Width="100" Height="30" Content="Добавить" IsDefault="True" Command="{Binding AddCommand}" Visibility="{Binding AddButtonVisibility}" Margin="5" FontSize="14"/>
+                </StackPanel>
+            </Grid>
+
+        </Grid>
+    </Border>
+</Window>

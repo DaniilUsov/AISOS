@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31702.278
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AISOS", "AISOS\AISOS.csproj", "{8B50DBE5-1937-4534-B435-EE886532C5E1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B50DBE5-1937-4534-B435-EE886532C5E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B50DBE5-1937-4534-B435-EE886532C5E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B50DBE5-1937-4534-B435-EE886532C5E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B50DBE5-1937-4534-B435-EE886532C5E1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F38C45A-C000-4001-AF46-AF45334F388C}
+	EndGlobalSection
+EndGlobal

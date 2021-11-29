@@ -1,0 +1,27 @@
+﻿<Window x:Class="AISOS.Windows.PassBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AISOS.Windows"
+        mc:Ignorable="d" Height="200" Width="400" ResizeMode="NoResize" ShowInTaskbar="False" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True" Background="Transparent">
+    <Border BorderBrush="White" BorderThickness="2" CornerRadius="10" Padding="5" Background="{DynamicResource BackGradient}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <StackPanel VerticalAlignment="Center">
+                <Label Content="Введите пароль" FontSize="14"/>
+                <PasswordBox x:Name="FirstPassBox" VerticalAlignment="Center" FontSize="14" Padding="5" Margin="5" MaxLength="32" PasswordChanged="FirstPassBox_PasswordChanged"/>
+                <Label Content="Повторите пароль" FontSize="14"/>
+                <PasswordBox x:Name="SecondPassBox" VerticalAlignment="Center" FontSize="14" Padding="5" Margin="5" MaxLength="32" PasswordChanged="SecondPassBox_PasswordChanged"/>
+                <TextBlock x:Name="CheckTB" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="Red" FontFamily="Microsoft Sans Serif" Visibility="Collapsed" />
+            </StackPanel>
+            <StackPanel VerticalAlignment="Bottom" Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button x:Name="CancelBut" Content="Отмена" Height="30" Width="75" Margin="5" HorizontalContentAlignment="Right" IsCancel="True" Click="CancelBut_Click"/>
+                <Button x:Name="OkBut" Content="ОК" Height="30" Width="75" Margin="5" HorizontalContentAlignment="Right" IsDefault="True" Click="OkBut_Click"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
