@@ -32,6 +32,7 @@ namespace AISOS.ViewModels
             {
                 table = value;
                 OnPropertyChanged("Table");
+                
             }
         }
 
